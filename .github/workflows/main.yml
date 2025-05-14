@@ -59,19 +59,19 @@ namespace ChatbotApp2
 
             while (true)
             {
-                Console.Write("\nYou: ");
+                Console.Write("\nYou:");
                 string input = Console.ReadLine().ToLower();
 
                 if (input == "exit" || input == "quit")
                 {
-                    Console.WriteLine("CyberBot: Stay safe online. Goodbye!");
+                    Console.WriteLine("CyberBot:Stay safe online. Goodbye!");
                     break;
                 }
 
                 string sentiment = DetectSentiment(input);
                 if (!string.IsNullOrEmpty(sentiment))
                 {
-                    Console.WriteLine("CyberBot: " + sentimentResponses[sentiment]);
+                    Console.WriteLine("CyberBot:"+sentimentResponses[sentiment]);
                     userSentiment = sentiment;
                 }
 
@@ -81,22 +81,22 @@ namespace ChatbotApp2
                     string response = GetRandomResponse(keyword);
                     if (userInterest == keyword)
                     {
-                        Console.WriteLine($"CyberBot: As someone interested in {keyword}, here's a tip: {response}");
+                        Console.WriteLine($"CyberBot:As someone interested in {keyword}, here's a tip:{response}");
                     }
                     else
                     {
-                        Console.WriteLine("CyberBot: " + response);
+                        Console.WriteLine("CyberBot:" + response);
                     }
                 }
                 else if (input.Contains("my name is"))
                 {
                     userName = input.Substring(input.LastIndexOf("is") + 3).Trim();
-                    Console.WriteLine($"CyberBot: Nice to meet you, {userName}!");
+                    Console.WriteLine($"CyberBot:Nice to meet you, {userName}!");
                 }
                 else if (input.Contains("interested in"))
                 {
                     userInterest = input.Substring(input.LastIndexOf("in") + 3).Trim();
-                    Console.WriteLine($"CyberBot: Got it! I'll remember that you're interested in {userInterest}.");
+                    Console.WriteLine($"CyberBot:Got it! I'll remember that you're interested in {userInterest}.");
                 }
                 else
                 {
